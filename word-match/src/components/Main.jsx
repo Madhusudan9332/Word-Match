@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from "react";
 
-const Main = ({ wordMatchObj }) => {
+const Main = ({ wordMatchObj , getRandomObject}) => {
+
+  if (!wordMatchObj) {
+    return <div>Loading...</div>; // Or handle gracefully with a placeholder UI
+  }
+
   const { wordsA, wordsB } = wordMatchObj;
   const allWords = [...wordsA, ...wordsB];
 
@@ -76,6 +81,7 @@ const Main = ({ wordMatchObj }) => {
   // Restart game
   const handleRestart = () => {
     const shuffled = [...allWords].sort(() => Math.random() - 0.5);
+    getRandomObject();
     setShuffledWords(shuffled);
     setMatchedPairs([]);
     setSelectedWord(null);

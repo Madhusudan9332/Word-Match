@@ -13,8 +13,10 @@ Minimizes to the bottom-left corner when minimized.
 Blurred background for enhanced focus on the modal.
 Screenshots
 
-Screenshot showing the word grid and header.
-
+## Screenshot showing the word grid and header.
+![alt text](<word-match/src/assets/img/select first letter.PNG>)
+![alt text](<word-match/src/assets/img/Screenshot 2024-11-21 003216.png>)
+![alt text](<word-match/src/assets/img/if correct.png>)
 
 ## Help modal with video guide in full-screen mode.
 

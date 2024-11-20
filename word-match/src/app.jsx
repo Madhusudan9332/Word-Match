@@ -6,24 +6,33 @@ import Header from "./components/Header";
 import Help from "./components/Help";
 
 export function App() {
-  const [randomObject, setRandomObject] = useState(null);
   const [isHelpOpen, setIsHelpOpen] = useState(false);
+  const [randomObject, setRandomObject] = useState(null);
+  const [index, setIndex] = useState(0);
+
   const getRandomObject = () => {
     const randomIndex = Math.floor(Math.random() * wordMatchObjects.length);
-    return wordMatchObjects[randomIndex];
+    setIndex(randomIndex);
   };
 
   useEffect(() => {
-    console.log(randomObject);
-    setRandomObject(getRandomObject());
-  }, []);
+    setRandomObject(wordMatchObjects[index]);
+    setTimeout(() => {
+      console.log(randomObject);
+    }, 1000);
+  }, [index]);
 
-  setRandomObject(getRandomObject());
+  useEffect(() => {
+    setRandomObject(wordMatchObjects[0]);
+    setTimeout(() => {
+      console.log(randomObject);
+    }, 1000);
+  }, []);
   return (
     <>
       <Header onHelpClick={() => setIsHelpOpen(true)} />
       <Help isOpen={isHelpOpen} onClose={() => setIsHelpOpen(false)} />
-      <Main wordMatchObj={randomObject} />
+      <Main wordMatchObj={randomObject} getRandomObject={getRandomObject} />
     </>
   );
 }
