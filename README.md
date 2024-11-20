@@ -1,11 +1,11 @@
 # Word-MatchWord Match Game
 A simple and interactive word matching game built with React and Tailwind CSS. The game provides an engaging way to match pairs of words, track steps, and even offers a helpful video guide for understanding the gameplay.
 
-Features
+## Features
 Word Matching Grid: Match pairs of words to remove them from the grid.
 Step Counter: Tracks the number of steps taken to complete the game.
 Restart Button: Reset the game and try again.
-Help Modal:
+## Help Modal:
 Displays a video guide in the center of the screen.
 Includes options to minimize, maximize, and close.
 Minimizes to the bottom-left corner when minimized.
